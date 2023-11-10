@@ -1,5 +1,6 @@
 
 import React from 'react'
+import CustomButton from './CustomButton'
 
 function Intro({iconIllustrationIntro, iconPattern}) {
   return (
@@ -20,11 +21,8 @@ function Intro({iconIllustrationIntro, iconPattern}) {
                   <div className="absolute z-0 left-64 -right-48 top-12 -mr-20">
                         <img  src={iconPattern} alt="pattern" />
                   </div>
-                  <button
-                        className="my-10 text-veryLightGray bg-brightRed py-5 px-10 shadow-lg shadow-brightRed text-xl rounded-full font-medium capitalize z-10 flex justify-center m-auto"
-                  >
-                        get started
-                  </button>
+                  <CustomButton className="z-10 flex justify-center m-auto">get started</CustomButton>
+                  
             </div>
             <div className='py-14 px-3 text-center flex justify-center flex-col w-full'>
                   <h2 

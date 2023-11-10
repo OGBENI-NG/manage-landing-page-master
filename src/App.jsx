@@ -5,21 +5,29 @@ import hamburger from '../asset/images/icon-hamburger.svg'
 import IconClose from '../asset/images/icon-close.svg'
 import iconPattern from '../asset/images/bg-tablet-pattern.svg'
 import iconIllustrationIntro from '../asset/images/illustration-intro.svg'
+import iconSimplify from '../asset/images/bg-simplify-section-mobile.svg'
 import Intro from "../Components/Intro";
 import data from "../data"
 import Track from "../Components/Track";
 import CarouselItem from "../Components/CarouselItem";
+import CustomButton from "../Components/CustomButton";
+import IntroBase from "../Components/IntroBase";
+import Footer from "../Components/Footer";
 
 
 
 export default function App() {
   const [toggleOpen, setToggleOpen] = useState(false)
   const [currentItem, setCurrentItem] = useState(0);
+  const [email, setEmail] = useState("")
+  const [error, setError] = useState("")
 
-  
+  //toggle menu hamburger
   function handleToggle() {
     setToggleOpen(prevToggle => !prevToggle)
   }
+
+  //track items in data
   const trackItems = data.slice(0, 3)
   const tracks = trackItems.map(item => (
     <Track 
@@ -30,6 +38,7 @@ export default function App() {
     />
   ))
 
+  //testimonies items in data
   const testimoniesData = data.slice(3)
   const testimonies = testimoniesData.map((item, index) => (
     <CarouselItem
@@ -40,7 +49,6 @@ export default function App() {
       userImg={item.userImg}
       isActive={index === currentItem}
       currentItem={currentItem}
-      
     />
   ))
   useEffect(() => {
@@ -56,7 +64,26 @@ export default function App() {
     }
   }, [testimoniesData.length]);
 
+  function handleChange(e) {
+    const value = e.target.value;
+    setEmail(value)
+    setError('');
+  }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+     if (!email.trim()) {
+      setError('Please insert valid email');
+    } else if (!emailRegex.test(email)) {
+      setError('Please insert valid email');
+    } else {
+      // Your logic for handling the form submission goes here
+      // Clear error on successful submission
+      setError('');
+    }
+  }
 
   return (
     <main className={"bg-white h-screen font-sans w-full overflow-x-hidden "}>
@@ -76,6 +103,16 @@ export default function App() {
         <h1>What they've said</h1>
       </div>
       <div>{testimonies}</div>
+      <CustomButton className="flex m-auto justify-center">get started</CustomButton>
+      <IntroBase
+        iconSimplify={iconSimplify}
+      />
+      <Footer
+        email={email}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        error={error}
+      />
     </main>
 
   )
