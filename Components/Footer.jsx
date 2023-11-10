@@ -9,7 +9,9 @@ export default function Footer({email, handleChange, handleSubmit, error}) {
           <input placeholder='Updates in your inbox…' className={`w-full h-12 outline-none rounded-full px-4 text-lg ${error && "text-brightRed border-2 border-brightRed"}`} type="text" value={email} onChange={handleChange}/>
         <CustomButton type='submit' className="flex-none py-3 px-7 my-0 shadow-none bg-brightRed" >go</CustomButton>
         </div>
-      {error && <span className='text-brightRed italic pl-5'>{error}</span>}
+      <div className='pl-5'>
+        {error && <span className='text-brightRed italic '>{error}</span>}
+     </div>
       </form>
     </footer>
   )
