@@ -8,7 +8,7 @@ export default function IntroBase({iconSimplify}) {
             <img src={iconSimplify} className='h-full' alt="simplify-icon" />
       </div>
       <h1 className='text-4xl font-bold text-veryLightGray px-1 text-center leading-relaxed'>Simplify how your team works today.</h1>
-      <CustomButton className="bg-veryLightGray flex justify-center m-auto text-brightRed shadow-none">Get Started</CustomButton>
+      <CustomButton className="bg-veryLightGray flex justify-center m-auto text-orange-600 shadow-none">Get Started</CustomButton>
     </section>
   )
 }
