@@ -103,7 +103,7 @@ export default function App() {
         <h1>What they've said</h1>
       </div>
       <div>{testimonies}</div>
-      <CustomButton className="flex m-auto justify-center">get started</CustomButton>
+      <CustomButton className="flex m-auto justify-center bg-brightRed">get started</CustomButton>
       <IntroBase
         iconSimplify={iconSimplify}
       />

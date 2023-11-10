@@ -21,7 +21,7 @@ function Intro({iconIllustrationIntro, iconPattern}) {
                   <div className="absolute z-0 left-64 -right-48 top-12 -mr-20">
                         <img  src={iconPattern} alt="pattern" />
                   </div>
-                  <CustomButton className="z-10 flex justify-center m-auto">get started</CustomButton>
+                  <CustomButton className="z-10 bg-brightRed flex justify-center m-auto">get started</CustomButton>
                   
             </div>
             <div className='py-14 px-3 text-center flex justify-center flex-col w-full'>
