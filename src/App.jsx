@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect, useCallback} from "react";
 import Header from "../Components/Header"
 import logo from '../asset/images/logo.svg'
 import hamburger from '../asset/images/icon-hamburger.svg'
@@ -64,11 +64,12 @@ export default function App() {
     }
   }, [testimoniesData.length]);
 
-  function handleChange(e) {
+  const handleChange = useCallback((e) => {
     const value = e.target.value;
     setEmail(value)
     setError('');
-  }
+  }, [email])
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -79,6 +80,7 @@ export default function App() {
     } else if (!emailRegex.test(email)) {
       setError('Please insert valid email');
     } else {
+      setError("sent")
       // Your logic for handling the form submission goes here
       // Clear error on successful submission
       setError('');
