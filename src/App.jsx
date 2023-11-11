@@ -1,6 +1,7 @@
 import React,{useState, useEffect, useCallback} from "react";
 import Header from "../Components/Header"
 import logo from '../asset/images/logo.svg'
+import logoFooter from '../asset/images/logo-footer.svg'
 import hamburger from '../asset/images/icon-hamburger.svg'
 import IconClose from '../asset/images/icon-close.svg'
 import iconPattern from '../asset/images/bg-tablet-pattern.svg'
@@ -88,7 +89,7 @@ export default function App() {
   }
 
   return (
-    <main className={"bg-white h-screen font-sans w-full overflow-x-hidden "}>
+    <main className={"bg-white h-screen scroll-smooth font-sans w-full overflow-x-hidden "}>
       <Header
         hamburger={toggleOpen ?  IconClose : hamburger}
         logo={logo}
@@ -105,7 +106,7 @@ export default function App() {
         <h1>What they've said</h1>
       </div>
       <div>{testimonies}</div>
-      <CustomButton className="flex m-auto justify-center bg-brightRed">get started</CustomButton>
+      <CustomButton className="flex m-auto justify-center bg-brightRed mb-14">get started</CustomButton>
       <IntroBase
         iconSimplify={iconSimplify}
       />
@@ -114,6 +115,7 @@ export default function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         error={error}
+        logoFooter={logoFooter}
       />
     </main>
 
