@@ -3,15 +3,15 @@ import CustomButton from './CustomButton'
 
 export default function Footer({email, handleChange, handleSubmit, error}) {
   return (
-    <footer  className='bg-veryDarkBlue'>
-      <form onSubmit={handleSubmit} className='px-5 py-8'>
-        <div className='flex items-center justify-center gap-3 mb-1 pt-10'>
-          <input placeholder='Updates in your inbox…' className={`w-full h-12 outline-none rounded-full px-4 text-lg ${error && "text-brightRed border-2 border-brightRed"}`} type="text" value={email} onChange={handleChange}/>
-        <CustomButton type='submit' className="flex-none py-3 px-7 my-0 shadow-none bg-brightRed" >go</CustomButton>
+    <footer  className='bg-veryDarkBlue py-10'>
+      <form onSubmit={handleSubmit} className='px-5'>
+        <div className='flex items-center gap-2 h-auto'>
+          <input placeholder='Updates in your inbox…' className={`w-full h-full outline-none py-4 rounded-full px-4 text-lg ${error && "text-brightRed border-2 border-brightRed"}`} type="text" value={email} onChange={handleChange}/>
+        <CustomButton type='submit' className="shadow-none bg-brightRed my-0" >go</CustomButton>
         </div>
-      <div className='pl-5'>
-        {error && <span className='text-brightRed italic '>{error}</span>}
-     </div>
+        <div className='pl-5 pt-1 block'>
+          {error && <span className='text-brightRed italic '>{error}</span>}
+        </div>
       </form>
     </footer>
   )
