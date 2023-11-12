@@ -50,6 +50,7 @@ export default function App() {
       userImg={item.userImg}
       isActive={index === currentItem}
       currentItem={currentItem}
+      onDotClick={onDotClick}
     />
   ))
   useEffect(() => {
@@ -57,13 +58,17 @@ export default function App() {
     if (testimoniesData.length > 0) {
       const intervalId = setInterval(() => {
         setCurrentItem((prevItem) => (prevItem + 1) % testimoniesData.length);
-        
       }, 4000);
 
       // Clear the interval on component unmount
       return () => clearInterval(intervalId);
     }
   }, [testimoniesData.length]);
+
+  //clicking on the dot index
+  function onDotClick(index) {
+    setCurrentItem(index);
+  }
 
   const handleChange = useCallback((e) => {
     const value = e.target.value;
@@ -81,7 +86,7 @@ export default function App() {
     } else if (!emailRegex.test(email)) {
       setError('Please insert valid email');
     } else {
-      setError("sent")
+      setEmail("")
       // Your logic for handling the form submission goes here
       // Clear error on successful submission
       setError('');
@@ -102,11 +107,13 @@ export default function App() {
         iconPattern={iconPattern}
       />
       <div>{tracks}</div>
-      <div className="flex justify-center my-10 text-3xl font-bold text-darkBlue">
+      <div className="flex justify-center my-10 text-3xl font-bold
+       text-darkBlue md:text-5xl md:my-20">
         <h1>What they've said</h1>
       </div>
       <div>{testimonies}</div>
-      <CustomButton className="flex m-auto justify-center bg-brightRed mb-14">get started</CustomButton>
+      <CustomButton className="flex m-auto justify-center bg-brightRed
+      md:px-16 md:py-5 md:text-2xl mb-14">get started</CustomButton>
       <IntroBase
         iconSimplify={iconSimplify}
       />
