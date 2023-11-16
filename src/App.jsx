@@ -10,10 +10,12 @@ import iconSimplify from '../asset/images/bg-simplify-section-mobile.svg'
 import Intro from "../Components/Intro";
 import data from "../data"
 import Track from "../Components/Track";
-import CarouselItem from "../Components/CarouselItem";
+import MemoCarouselItem from "../Components/CarouselItem";
 import CustomButton from "../Components/CustomButton";
 import IntroBase from "../Components/IntroBase";
-import Footer from "../Components/Footer";
+import MemoFooter from "../Components/Footer";
+import Section from "../Components/Section";
+
 
 
 
@@ -42,7 +44,7 @@ export default function App() {
   //testimonies items in data
   const testimoniesData = data.slice(3)
   const testimonies = testimoniesData.map((item, index) => (
-    <CarouselItem
+    <MemoCarouselItem
       key={item.id}
       id={item.id}
       name={item.name}
@@ -94,9 +96,10 @@ export default function App() {
   }
 
   return (
-    <main className={"bg-white h-screen scroll-smooth font-sans w-full overflow-x-hidden "}>
+    <main className={`bg-white h-screen scroll-smooth font-sans w-full`}>
+      <div className="overflow-x-hidden">
       <Header
-        hamburger={toggleOpen ?  IconClose : hamburger}
+        hamburger={toggleOpen ? IconClose : hamburger}
         logo={logo}
         iconPattern={iconPattern}
         toggleOpen={toggleOpen}
@@ -104,26 +107,35 @@ export default function App() {
       />
       <Intro 
         iconIllustrationIntro={iconIllustrationIntro}
-        iconPattern={iconPattern}
       />
-      <div>{tracks}</div>
+      <div  className="lg:flex lg:justify-center lg:items-start lg:gap-3 lg:px-12 lg:mt-24">
+        <Section/>
+        <div>{tracks}</div>
+      </div>
       <div className="flex justify-center my-10 text-3xl font-bold
-       text-darkBlue md:text-5xl md:my-20">
+       text-darkBlue md:text-5xl md:my-20 lg:my-5 lg:text-3xl">
         <h1>What they've said</h1>
       </div>
-      <div>{testimonies}</div>
-      <CustomButton className="flex m-auto justify-center bg-brightRed
-      md:px-16 md:py-5 md:text-2xl mb-14">get started</CustomButton>
+      <div className="lg:flex custom-scrollbar lg:mx-4 lg:items-center lg:gap-4 justify-start 
+      lg:overflow-scroll lg:my-8 lg:scrollbar-hide">
+        {testimonies}
+      </div>
+      <CustomButton className="flex m-auto justify-center bg-brightRed 
+        sm:text-lg sm:py-3 sm:px-12 
+        md:px-16 md:py-5 md:text-2xl mb-14 text-veryLightGray 
+        lg:py-3 lg:px-12 lg:text-lg lg:mb-36"
+      >get started</CustomButton>
       <IntroBase
         iconSimplify={iconSimplify}
       />
-      <Footer
+      <MemoFooter
         email={email}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         error={error}
         logoFooter={logoFooter}
       />
+      </div>
     </main>
 
   )

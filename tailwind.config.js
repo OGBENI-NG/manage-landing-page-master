@@ -16,12 +16,22 @@ export default {
         veryDarkBlue: 'hsl(233, 12%, 13%)',
         veryPaleRed: 'hsl(13, 100%, 96%)',
         veryLightGray: 'hsl(0, 0%, 98%)',
-        overlayColor: "rgba(0, 0, 0, 0.2)"
+        overlayColor: "rgba(0, 0, 0, 0.2)",
+        baseColor: "rgba(255,240,236,0.166)",
+        hoverColor: "hsla(12, 87%, 70%, 0.926)",
+
       },
       fontFamily: {
         sans: ['"Be Vietnam Pro"', 'sans-serif'],
       },
+      screens: {
+        'sm': '320px', // Added custom breakpoint for 320px
+        'md': '768px',
+        'lg': '1024px',
+      },
+
     },
   },
   plugins: [],
+  
 };
