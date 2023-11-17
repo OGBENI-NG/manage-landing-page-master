@@ -17,13 +17,15 @@ function Footer({email, logoFooter, handleChange, handleSubmit, error}) {
   const firstSideLink = footerLinks.slice(0, 4)
   const secondSideLink = footerLinks.slice(4)
   return (
-    <footer  className='bg-veryDarkBlue py-10 md:p-14 lg:p-12 lg:py-16 lg:flex lg:justify-center
-     lg:items-start lg:gap-16 sm:relative sm:pb-24
+    <footer  className='bg-veryDarkBlue py-10 md:p-14 md:pb-28
+      lg:p-12 lg:pb-4 lg:py-16 lg:flex lg:justify-center
+      lg:items-start lg:gap-16 sm:relative sm:pb-24
+      xl:p-16 xl:pb-8 xl:justify-between
     '
     >
       <form onSubmit={handleSubmit} id='text' className='lg:flex'>
         <div className='lg:order-3 lg:w-[380px]'>
-          <div className='flex items-center gap-2 px-5 pt-8 md:gap-3 lg:p-0 
+          <div className='flex items-center gap-2 px-5 pt-8 md:gap-3 lg:p-0
           '>
             <input
               placeholder='Updates in your inbox…'
@@ -42,22 +44,23 @@ function Footer({email, logoFooter, handleChange, handleSubmit, error}) {
               font-medium text-veryLightGray text-lg  md:px-12 md:py-5 md:text-2xl lg:hover:bg-hoverColor lg:text-lg lg:py-2 lg:px-6" 
             >go</button>
           </div>
-          <div className='pl-5 pt-1 block lg:pl-2 '>
+          <div className='pl-8 pt-1 block lg:pl-2 '>
             {error && <span className='text-brightRed italic md:text-lg lg:text-sm'>{error}</span>}
           </div>
             <span className='text-darkGrayishBlue lg:relative text-sm sm:absolute
-            sm:p-0 sm:bottom-12 sm:text-center sm:right-0 sm:left-0 sm:m-auto md:text-lg 
-            lg:block lg:ml-14 lg:mt-[7.9rem]
+            sm:p-0 sm:bottom-12 sm:text-center sm:right-0 sm:left-0 sm:m-auto 
+            md:text-lg md: 
+            lg:block lg:ml-14 lg:mt-[7.9rem] xl:mt-[10rem]
           '
           >
           Copyright 2023. All Rights Reserved</span>
         </div>
       </form>
       <nav className='flex justify-center py-10 items-top gap-20 md:justify-between md:px-20
-        lg:p-0 lg:m-0 lg:-order-2 lg:gap-10 lg:-mt-3'
+        lg:p-0 lg:m-0 lg:-order-2 lg:gap-10 lg:-mt- xl:gap-24'
       >
-        <ul className='text-base leading-9 text-veryLightGray md:text-2xl md:leading-loose
-          lg:text-base lg:leading-[2.8]
+        <ul className='text-base leading-9 text-veryLightGray md:text-3xl md:leading-loose
+          lg:text-base lg:leading-[2.8] xl:text-2xl xl:leading-loose
           '
         >
           {firstSideLink.map((link, index) => (
@@ -71,8 +74,8 @@ function Footer({email, logoFooter, handleChange, handleSubmit, error}) {
             </li>
           ))}
         </ul>
-        <ul className='text-base leading-9 text-veryLightGray md:text-2xl md:leading-loose
-          lg:text-base lg:leading-[2.5]'
+        <ul className='text-base leading-9 text-veryLightGray md:text-3xl md:leading-loose
+          lg:text-base lg:leading-[2.5] xl:text-2xl xl:leading-loose'
         >
           {secondSideLink.map((link, index) => (
             <li key={index}>
@@ -86,9 +89,11 @@ function Footer({email, logoFooter, handleChange, handleSubmit, error}) {
           ))}
         </ul>
       </nav>
-      <div className='lg:-order-3 lg:flex lg:flex-col lg:gap-[5.5rem]'>
+      <div className='lg:-order-3 lg:flex lg:flex-col lg:gap-[6rem] 
+        xl:gap-[6.4rem]'>
         <div className='text-veryLightGray text-4xl flex gap-8 justify-center md:text-7xl 
-          md:gap-12 md:my-6 lg:p-0 lg:m-0 lg:text-3xl lg:gap-2'
+          md:gap-12 md:my-6 lg:p-0 lg:m-0 lg:text-3xl lg:gap-2
+          xl:text-4xl xl:gap-4'
         >
           <FaSquareFacebook  className='lg:hover:text-brightRed lg:cursor-pointer'/>
           <FaSquareYoutube  className='lg:hover:text-brightRed lg:cursor-pointer'/>
@@ -99,7 +104,7 @@ function Footer({email, logoFooter, handleChange, handleSubmit, error}) {
         <div className='flex justify-center flex-col items-center pt-12 lg:p-0
           lg:m-0 lg:-order-1'
         >
-          <img className='md:h-12 lg:h-8 ' src={logoFooter} alt="logo-footer" />
+          <img className='md:h-12 lg:h-8 xl:h-10' src={logoFooter} alt="logo-footer" />
         </div>
       </div>
     </footer>

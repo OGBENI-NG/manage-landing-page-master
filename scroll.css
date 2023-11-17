@@ -1,0 +1,10 @@
+/* styles.css */
+
+.snap-scrollbar::-webkit-scrollbar {
+      display: none;
+}
+.snap-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+}
+    

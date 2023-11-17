@@ -14,51 +14,58 @@ const Header = ({logo, hamburger, handleToggle, toggleOpen}) => {
       className='w-full lg:relative '
     >
       <div className='relative w-full before:absolute before:content-[""] before:right-0 
-        before:w-[300px] before:bg-veryPaleRed before:rounded-[218px] before:rotate-45
+        lg:before:w-[300px] before:bg-veryPaleRed before:rounded-[218px] before:rotate-45
         before:h-[614px] before:z-[0]
-        sm:before:left-44 sm:before:w-[280px] sm:before:-top-40
-        lg:absolute lg:before:left-auto lg:z-[2] lg:before:-top-[9.5rem] 
+        sm:before:left-44 sm:before:w-[240px] sm:before:-top-40
+        md:before:left-[21rem] md:before:-top-[13rem] md:before:w-[370px]
+        md:before:h-[900px]
+        lg:absolute lg:before:left-[45rem] lg:z-[2] lg:before:-top-[9.5rem] 
+        lg:before:h-[680px] xl:before:left-[57rem]
         
         '
       >
         <div className='
-          sm:flex sm:py-10 sm:pl-5 lg:px-12 sm:overflow-x-hidden
+          sm:flex sm:py-10 sm:p-5 lg:px-12 sm:overflow-x-hidden
+          md:p-10
           lg:flex lg:justify-between lg:items-center lg:py-2
-          xl:px-32
+           xl:m-0 xl:w-full xl:px-16 xl:py-10 xxl:px-40
         '
         >
-          <div>
-            <img className='' src={logo} alt="logo" />
+          <div className='xl:w-max'>
+            <img className='md:h-12 lg:h-7 xl:h-10' src={logo} alt="logo" />
           </div>
-          <nav className={` sm:z-[999] sm:bg-overlayColor lg:invisible sm:fixed
-            sm:inset-0 lg:relative ${toggleOpen ? "" : "sm:hidden lg:block"}
+          <nav className={` sm:z-[999] sm:bg-overlayColor lg:invisible sm:fixed 
+            sm:inset-0 lg:relative ${toggleOpen ? "overflow-hidden" : "sm:hidden lg:block"}
             `}
           >
               {<ul className={`
-                lg:flex lg:items-center lg:p-0 lg:m-0 lg:gap-6 capitalize lg:font-medium lg:text-base sm:bg-veryLightGray lg:bg-transparent
+                lg:flex lg:items-center lg:p-0 lg:m-0 lg:gap-6 capitalize lg:font-medium lg:text-base bg-veryLightGray lg:bg-transparent
                 bg-transparent text-darkBlue sm:text-center sm:mx-4 sm:mt-24
                 sm:text-2xl sm:font-medium sm:py-8 rounded-md lg:visible sm:overflow-x-hidden
+                md:mx-20 md:mt-36 md:text-4xl
+                xl:w-max xl:text-lg xl:gap-8
                 `}
               >
                 {links.map((link, index) => (
-                  <li key={index} className='lg:m-0 sm:m-6'>
+                  <li key={index} className='lg:m-0 sm:m-6 md:my-[3rem]'>
                     <a className='lg:hover:text-darkGrayishBlue' href={link.link}>{link.name}</a>
                   </li>
                 ))}
               </ul>}
             </nav>
-          <div>
+          <div className=''>
             <CustomButton className="
-              text-veryLightGray bg-brightRed py-2 px-8 text-base sm:hidden lg:block 
-              lg:relative lg:z-[1] 
+              text-veryLightGray bg-brightRed sm:hidden lg:block 
+              lg:relative lg:z-[1] lg:px-8 lg:py-2 lg:text-lg
+              xl:m-0 xl:py-4 xl:px-12
               "
             >get started</CustomButton>
             <div 
               onClick={handleToggle}
-              className={`${toggleOpen ? "fixed" : "absolute"} z-[999] right-5 top-10 md:right-8 lg:hidden
+              className={`${toggleOpen ? "fixed" : "absolute"} z-[999] right-5 top-10 md:right-10 lg:hidden
               `}
             >
-            <img className='md:h-10' src={hamburger} alt="hamburger" />
+            <img className='md:h-9' src={hamburger} alt="hamburger" />
             </div>
           </div>
         </div>
