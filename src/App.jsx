@@ -97,7 +97,7 @@ export default function App() {
   }
 
   return (
-    <main className={` bg-white lg:overflow-x-auto snap-scrollbar h-screen scroll-smooth font-sans w-full`}>
+    <main className={` bg-white lg:overflow-x-auto snap-scrollbar scroll-smooth font-sans w-full`}>
       <div className="overflow-x-hidden w-full">
       <Header
         hamburger={toggleOpen ? IconClose : hamburger}
