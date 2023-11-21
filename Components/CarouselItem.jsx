@@ -14,7 +14,7 @@ function CarouselItem({ id, userImg, name, testimonial, isActive, currentItem, o
     >
       <div className='bg-veryLightGray rounded gap-5 pb-10 flex flex-col 
         items-center md:pb-14 md:gap-10 lg:gap-6 lg:p-5 lg:m-0 lg:w-[500px]
-        lg:h-[220px] xl:w-[580px] xl:h-[280px] 
+        lg:h-[220px] xl:w-[500px] xxl:w-[610px] xl:h-[280px] xxl:gap-10
 
         '
       >
@@ -25,7 +25,7 @@ function CarouselItem({ id, userImg, name, testimonial, isActive, currentItem, o
         <p className='text-lg font-bold text-darkBlue md:text-2xl'>{name}</p>
         <p className='text-lg text-center text-darkGrayishBlue sm:leading-loose 
           px-6 md:text-2xl md:px-20 md:leading-relaxed lg:p-0 lg:text-base
-          xl:text-xl lg:leading-relaxed'
+          xl:text-base lg:leading-relaxed xxl:text-xl'
         >{testimonial}</p>
       </div>
       <div className='flex items-center gap-2 justify-center mt-7 mb-12 md:mt-12 md:mb-24 lg:hidden'>

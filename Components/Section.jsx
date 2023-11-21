@@ -7,7 +7,8 @@ export default function Section() {
       >
             <h2 className='text-darkBlue leading-snug sm:text-4xl font-bold
              sm:mb-5 md:text-5xl md:px-16 md:leading-snug lg:px-0 lg:mx-0 
-             lg:py-0 lg:mb-0 lg:text-3xl xl:text-[2.5rem] xl:pr-9 xl:leading-tight'
+             lg:py-0 lg:mb-0 lg:text-3xl xl:text-[2.3rem] xl:pr-9 xl:leading-tight
+             xxl:text-[2.8rem]'
             >
                   What’s  different about Manage?
             </h2>
@@ -23,8 +24,8 @@ export default function Section() {
                   md:text-2xl md:px-20 md:leading-normal md:my-5 
                   lg:p-0 lg:pr-20 lg:mt-8 lg:text-base lg:leading-relaxed
                   lg:before:top-28 lg:before:-left-48  lg:before:right-auto
-                  lg:before:h-[614px] xl:before:-left-60 xl:before:w-[380px]
-                  xl:before:h-[800px] xl:text-xl xl:pr-28
+                  lg:before:h-[614px] xl:before:-left-60 
+                  xl:before:h-[800px] xl:text-base xl:pr-28 xxl:text-xl
                   '
             > 
                   Manage provides all the functionality your team needs, without 

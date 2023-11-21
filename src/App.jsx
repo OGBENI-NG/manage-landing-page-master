@@ -98,7 +98,7 @@ export default function App() {
 
   return (
     <main className={` bg-white lg:overflow-x-auto snap-scrollbar h-screen scroll-smooth font-sans w-full`}>
-      <div className="overflow-x-hidden snap-scrollbar w-full">
+      <div className="overflow-x-hidden w-full">
       <Header
         hamburger={toggleOpen ? IconClose : hamburger}
         logo={logo}
@@ -110,24 +110,25 @@ export default function App() {
         iconIllustrationIntro={iconIllustrationIntro}
       />
       <div  className="lg:flex lg:justify-center lg:items-start lg:gap-3 lg:px-12 lg:mt-28
-        xl:px-16 xl:justify-between xl:gap-0"
+        xl:px-20 xl:justify-between xl:gap-16 xxl:px-32"
       >
         <Section/>
         <div>{tracks}</div>
       </div>
       <div className="flex justify-center sm:my-10 text-3xl font-bold
        text-darkBlue md:text-5xl md:my-20 lg:my-28 lg:mb-12 lg:text-3xl
-        xl:text-4xl ">
+        xl:text-4xl xxl:text-5xl xxl:my-24">
         <h1>What they've said</h1>
       </div>
       <div className="lg:flex lg:mx-1 lg:items-center lg:gap-4 
-      lg:overflow-auto snap-scrollbar ">
+      lg:overflow-auto carousel">
         {testimonies}
       </div>
       <CustomButton className="flex m-auto justify-center bg-brightRed 
         sm:text-lg sm:py-3 sm:px-12 
         md:px-16 md:py-5 md:text-2xl mb-14 text-veryLightGray 
-        lg:py-3 lg:px-12 lg:text-lg lg:mb-36 xl:py-4 xl:px-12 "
+        lg:py-3 lg:px-12 lg:text-lg lg:mb-36 xl:py-2 xl:px-10
+        xxl:px-12 xxl:py-4"
       >get started</CustomButton>
       <IntroBase
         iconSimplify={iconSimplify}
