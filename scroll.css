@@ -1,6 +1,6 @@
 /* styles.css */
 
-.snap-scrollbar::-webkit-scrollbar {
+::-webkit-scrollbar {
       display: none;
       width: 0;
 }
@@ -15,8 +15,9 @@
 
 
 /* For WebKit browsers (Chrome, Safari) */
-::-webkit-scrollbar {
+.carousel::-webkit-scrollbar {
       height: 8px; /* Set the width of the scrollbar */
+      display: block;
 }
     
 .carousel::-webkit-scrollbar-thumb:horizontal {
@@ -24,7 +25,7 @@
       border-radius: 25px;
 }
 
-.carousel::-webkit-scrollbar-track {
+.carousel::-webkit-scrollbar-track:horizontal {
 background-color: hsl(13, 100%, 96%); /* Set the color of the scrollbar track */
 }
 
